@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ins',
     'imagekit',
+    'annoying',
 ]
 
 MIDDLEWARE = [
