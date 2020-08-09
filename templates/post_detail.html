@@ -29,16 +29,6 @@
                     {{ object.posted_on|timesince}}
                 </div>
             </div>
-            <ul class="comment-list">
-                {% for comment in object.comments.all %}
-                    <li class="comment-list__comment">
-                        <a href="/" class="user">
-                            {{ comment.user.username }}
-                        </a>
-                        <span class="comment">{{ comment.comment }}</span>
-                    </li>
-                {% endfor %}
-            </ul>
             <section class="input-row">
                 <!-- <i class="fa {% has_user_liked_post post user %} submit-like" aria-hidden="true"></i> -->
                 <i class="fa {% if liked %}fa-heart{% else %}fa-heart-o{% endif %} submit-like" aria-hidden="true"></i>
@@ -49,6 +39,16 @@
                     <span class="post-pk">{{ post.pk }}</span>
                 </div>
             </section>
+            <ul class="comment-list">
+                {% for comment in object.comments.all %}
+                    <li class="comment-list__comment">
+                        <a href="/" class="user">
+                            {{ comment.user.username }}
+                        </a>
+                        <span class="comment">{{ comment.comment }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </div>

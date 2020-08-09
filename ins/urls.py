@@ -1,7 +1,7 @@
 from django.urls import path, include
 
 from .views import (PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, 
-                    SignUp, UserProfile, EditProfile, toggleFollow, addLike, addComment)
+                    SignUp, UserProfile, EditProfile, toggleFollow, addLike, addComment, ExploreView)
 
 urlpatterns = [
     path('', PostListView.as_view(), name='home'),
@@ -15,4 +15,5 @@ urlpatterns = [
     path('togglefollow', toggleFollow, name='togglefollow'),
     path('like', addLike, name='addLike'),
     path('comment', addComment, name='addComment'),
+    path('explore', ExploreView.as_view(), name='explore'),
 ]
